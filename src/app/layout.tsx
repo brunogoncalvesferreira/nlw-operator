@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, JetBrains_Mono } from "next/font/google";
+import { TRPCReactProvider } from "@/trpc/client";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -46,7 +47,7 @@ export default function RootLayout({
 						</a>
 					</div>
 				</nav>
-				{children}
+				<TRPCReactProvider>{children}</TRPCReactProvider>
 			</body>
 		</html>
 	);

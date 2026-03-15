@@ -1,24 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { CodeBlock } from "@/components/ui/code-block";
 import { SectionTitle } from "@/components/ui/section-title";
 import { CodeInputForm } from "./code-input-form";
-
-const sampleCode = `function calculateTotal(items) {
-  var total = 0;
-  for (var i = 0; i < items.length; i++) {
-    total = total + items[i].price;
-  }
-
-  if (total > 100) {
-    console.log("discount applied");
-    total = total * 0.9;
-  }
-
-  // TODO: handle tax calculation
-  // TODO: handle currency conversion
-
-  return total;
-}`;
+import { HomeStats } from "./home-stats";
 
 const leaderboardData = [
 	{
@@ -55,7 +38,7 @@ const leaderboardData = [
 	},
 ];
 
-export default async function Home() {
+export default function Home() {
 	return (
 		<main className="flex flex-col items-center gap-8 px-10 pt-20 pb-16">
 			{/* Hero */}
@@ -75,56 +58,11 @@ export default async function Home() {
 				</p>
 			</section>
 
-			{/* Code Editor Window */}
-			<div className="w-[780px] overflow-hidden border border-border-primary bg-bg-input">
-				{/* Window Chrome */}
-				<div className="flex items-center h-10 px-4 border-b border-border-primary">
-					<div className="flex items-center gap-2">
-						<span className="block w-3 h-3 rounded-full bg-accent-red" />
-						<span className="block w-3 h-3 rounded-full bg-accent-amber" />
-						<span className="block w-3 h-3 rounded-full bg-accent-green" />
-					</div>
-				</div>
-
-				{/* Code Content */}
-				<div className="flex h-[360px]">
-					{/* Line Numbers */}
-					<div className="flex flex-col items-end gap-2 py-4 px-3 w-12 bg-bg-surface border-r border-border-primary shrink-0">
-						{sampleCode.split("\n").map((_, i) => {
-							const lineNum = i + 1;
-							return (
-								<span
-									key={`ln-${lineNum}`}
-									className="font-mono text-xs text-text-tertiary leading-[1.7]"
-								>
-									{lineNum}
-								</span>
-							);
-						})}
-					</div>
-
-					{/* Code */}
-					<CodeBlock
-						code={sampleCode}
-						language="javascript"
-						className="border-none rounded-none bg-bg-input flex-1 [&_pre]:leading-[1.7]"
-					/>
-				</div>
-			</div>
-
-			{/* Actions Bar */}
+			{/* Code Editor + Actions */}
 			<CodeInputForm />
 
 			{/* Footer Stats */}
-			<div className="flex items-center justify-center gap-6">
-				<span className="font-body text-xs text-text-tertiary">
-					2,847 codes roasted
-				</span>
-				<span className="font-mono text-xs text-text-tertiary">·</span>
-				<span className="font-body text-xs text-text-tertiary">
-					avg score: 4.2/10
-				</span>
-			</div>
+			<HomeStats />
 
 			{/* Spacer */}
 			<div className="h-16" />

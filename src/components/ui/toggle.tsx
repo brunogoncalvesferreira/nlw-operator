@@ -16,10 +16,10 @@ function Toggle({ checked, label, className, ...props }: ToggleProps) {
 		>
 			<Switch.Root
 				checked={checked}
-				className="flex items-center w-10 h-[22px] rounded-[11px] p-[3px] transition-colors bg-[#2A2A2A] data-[checked]:justify-end data-[checked]:bg-[#10B981]"
+				className="flex items-center w-10 h-[22px] rounded-[11px] p-[3px] transition-colors bg-[#2A2A2A] data-checked:justify-end data-checked:bg-[#10B981]"
 				{...props}
 			>
-				<Switch.Thumb className="block w-4 h-4 rounded-full transition-colors bg-[#6B7280] data-[checked]:bg-[#0A0A0A]" />
+				<Switch.Thumb className="block w-4 h-4 rounded-full transition-colors bg-[#6B7280] data-checked:bg-[#0A0A0A]" />
 			</Switch.Root>
 			{label && <span className="text-[#6B7280]">{label}</span>}
 		</div>
