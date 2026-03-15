@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# > devroast
 
-## Getting Started
+Cole seu codigo. Leve um roast.
 
-First, run the development server:
+O **devroast** analisa trechos de codigo e devolve uma avaliacao brutalmente honesta — com score, comentarios sarcasticos e sugestoes reais de melhoria. Os piores codigos vao parar no leaderboard publico da vergonha.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Como funciona
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Cole seu codigo** na area de input da homepage
+2. **Ative o roast mode** para comentarios com sarcasmo maximo (ou desative para feedback direto)
+3. **Receba o veredito** — um score de 0 a 10, diff anotado linha a linha, e badges de severidade
+4. **Leaderboard** — os codigos com piores scores ficam expostos no ranking publico
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Code input** com syntax highlighting e numeracao de linhas
+- **Roast mode toggle** — alterna entre feedback tecnico e modo sarcasmo
+- **Score visual** com ring chart e badges (critical, warning, good)
+- **Diff anotado** mostrando linhas adicionadas/removidas com sugestoes
+- **Shame leaderboard** — ranking dos piores codigos ja enviados
 
-## Learn More
+## Sobre
 
-To learn more about Next.js, take a look at the following resources:
+Projeto construido durante o evento **NLW** da [Rocketseat](https://rocketseat.com.br), desenvolvido ao longo das aulas do evento.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License
