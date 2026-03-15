@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -40,9 +41,11 @@ export default function Home() {
 				{/* Title Row */}
 				<div className="flex items-center justify-between w-full">
 					<SectionTitle size="sm">shame_leaderboard</SectionTitle>
-					<Button variant="link" size="sm">
-						{"$ view_all >>"}
-					</Button>
+					<Link href="/leaderboard">
+						<Button variant="link" size="sm">
+							{"$ view_all >>"}
+						</Button>
+					</Link>
 				</div>
 
 				{/* Subtitle */}

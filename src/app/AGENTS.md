@@ -37,9 +37,13 @@ Duas estrategias conforme o caso (ver `src/trpc/AGENTS.md` para detalhes):
 
 **IMPORTANTE**: NAO usar prefetch quando o objetivo eh animar a transicao de "sem dado" para "com dado" (ex: NumberFlow). Prefetch faz o dado chegar hydratado e a animacao nao acontece.
 
-### Homepage (excecao)
+### Homepage
 
-A homepage (`page.tsx`) ainda usa dados hardcoded para o leaderboard preview. Eh a unica pagina assim. O componente `HomeStats` busca dados reais do banco via tRPC client-side para permitir animacao com NumberFlow.
+A homepage (`page.tsx`) busca dados reais do banco para todas as secoes:
+- **Leaderboard preview**: `HomeLeaderboard` (async server component) busca top 3 via `caller.roast.getLeaderboard({ limit: 3 })`, renderizado dentro de `<Suspense>` com `HomeLeaderboardSkeleton`.
+- **Stats**: `HomeStats` (client component) busca via `useTRPC` + `useQuery` para permitir animacao com NumberFlow.
+
+**IMPORTANTE**: NAO usar prefetch para `HomeStats` — o dado precisa chegar via client fetch para NumberFlow animar de 0 ao valor real.
 
 ### Metadata
 

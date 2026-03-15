@@ -46,7 +46,7 @@ src/
 
 - **Server components por padrao**. Usar `"use client"` apenas quando necessario (estado, eventos, hooks de browser).
 - **Data fetching via tRPC**. Paginas server usam `caller` direto. Componentes client usam `useTRPC` + `useQuery`.
-- **Homepage**: leaderboard preview e stats na home ainda usam dados estaticos/hardcoded (a homepage eh a unica pagina assim). Paginas dedicadas (`/leaderboard`, `/roasts/[id]`) buscam do banco via tRPC.
+- **Homepage**: leaderboard preview busca top 3 do banco via `caller` (server component com Suspense). Stats usam `useTRPC` + `useQuery` (client component com NumberFlow). Paginas dedicadas (`/leaderboard`, `/roasts/[id]`) tambem buscam do banco via tRPC.
 - **Fonts**: JetBrains Mono (`font-mono`) para titulos/codigo, IBM Plex Mono (`font-body`) para texto corrido.
 - **Cores**: definidas como tokens Tailwind em `globals.css` (`bg-page`, `bg-surface`, `text-primary`, `accent-green`, etc.).
 - **Navbar no layout**, compartilhada entre todas as paginas.

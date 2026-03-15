@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { BundledLanguage } from "shiki";
 import { CollapsibleCode } from "@/components/ui/collapsible-code";
 import { LeaderboardCodeBlock } from "@/components/ui/leaderboard-code-block";
@@ -76,11 +77,21 @@ export async function HomeLeaderboard() {
 				)}
 			</div>
 
-			{/* Fade Hint */}
+			{/* Footer */}
 			<p className="text-center font-body text-xs text-text-tertiary py-4">
-				{entries.length > 0
-					? `showing top 3 of ${stats.totalRoasts.toLocaleString()} · view full leaderboard >>`
-					: "submit your code above to start the shame board"}
+				{entries.length > 0 ? (
+					<>
+						{`showing top 3 of ${stats.totalRoasts.toLocaleString()} · `}
+						<Link
+							href="/leaderboard"
+							className="text-text-secondary hover:text-text-primary transition-colors"
+						>
+							{"view full leaderboard >>"}
+						</Link>
+					</>
+				) : (
+					"submit your code above to start the shame board"
+				)}
 			</p>
 		</>
 	);
